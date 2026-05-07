@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']/div[@id='languages']" position="after">
+                <block title="Locale" name="locale_setting_container">
+                    <setting
+                        id="date_format_setting"
+                        string="Date Format"
+                        help="Configure global override of date format for all users."
+                        company_dependent="1"
+                    >
+                        <field name="date_format" />
+                    </setting>
+                    <setting
+                        id="time_format_setting"
+                        string="Time Format"
+                        help="Configure global override of time format for all users."
+                        company_dependent="1"
+                    >
+                        <field name="time_format" />
+                    </setting>
+                    <setting
+                        id="week_start_setting"
+                        string="Week Start"
+                        help="Configure global override of week start for all users."
+                        company_dependent="1"
+                    >
+                        <field name="week_start" />
+                    </setting>
+                    <setting
+                        id="decimal_point_setting"
+                        string="Decimal Point"
+                        help="Configure global override of decimal separator for all users."
+                        company_dependent="1"
+                    >
+                        <field name="decimal_point" />
+                    </setting>
+                    <setting
+                        id="thousands_sep_setting"
+                        string="Thousands Separator"
+                        help="Configure global override of thousands separator for all users."
+                        company_dependent="1"
+                    >
+                        <field name="thousands_sep" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
